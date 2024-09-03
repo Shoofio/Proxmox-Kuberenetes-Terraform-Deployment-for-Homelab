@@ -1,0 +1,62 @@
+module "master" {
+  source            = "./modules/master"
+  proxmox-nodes     = var.proxmox-nodes
+  main-machine-name = var.main-machine-name
+  is-main-only      = var.is-main-only-master
+  template-name     = var.template-name
+  boot-on-create    = var.boot-on-create
+  vm-id-prefix      = var.vm-id-prefix-master
+  vm-name           = var.vm-name-master
+  cores             = var.cores-master
+  sockets           = var.sockets
+  memory            = var.memory-master
+  cpu-type          = var.cpu-type
+  storage-name      = var.storage-name
+  storage-size      = var.storage-size-master
+  ssh-key           = var.ssh-key
+  default-gateway   = var.default-gateway
+  ip-address-prefix = var.ip-address-prefix-master
+  cloud-init-user   = var.cloud-init-user
+}
+
+module "worker" {
+  source            = "./modules/worker"
+  proxmox-nodes     = var.proxmox-nodes
+  main-machine-name = var.main-machine-name
+  is-main-only      = var.is-main-only-worker
+  template-name     = var.template-name
+  boot-on-create    = var.boot-on-create
+  vm-id-prefix      = var.vm-id-prefix-worker
+  vm-name           = var.vm-name-worker
+  cores             = var.cores-worker
+  sockets           = var.sockets
+  memory            = var.memory-worker
+  cpu-type          = var.cpu-type
+  storage-name      = var.storage-name
+  storage-size      = var.storage-size-worker
+  ssh-key           = var.ssh-key
+  default-gateway   = var.default-gateway
+  ip-address-prefix = var.ip-address-prefix-worker
+  cloud-init-user   = var.cloud-init-user
+}
+
+module "storage" {
+  source            = "./modules/storage"
+  proxmox-nodes     = var.proxmox-nodes
+  main-machine-name = var.main-machine-name
+  is-main-only      = var.is-main-only-storage
+  template-name     = var.template-name
+  boot-on-create    = var.boot-on-create
+  vm-id-prefix      = var.vm-id-prefix-storage
+  vm-name           = var.vm-name-storage
+  cores             = var.cores-storage
+  sockets           = var.sockets
+  memory            = var.memory-storage
+  cpu-type          = var.cpu-type
+  storage-name      = var.storage-name
+  storage-size      = var.storage-size-storage
+  ssh-key           = var.ssh-key
+  default-gateway   = var.default-gateway
+  ip-address-prefix = var.ip-address-prefix-storage
+  cloud-init-user   = var.cloud-init-user
+}
