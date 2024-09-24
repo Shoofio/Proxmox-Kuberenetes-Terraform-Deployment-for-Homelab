@@ -1,17 +1,22 @@
 #PROXMOX NODES
 
+variable "number-of-kubernetes-nodes" {
+  description = "Number of nodes to deploy to the Kubernetes cluster. If the number of Kubernetes nodes is bigger than the number of Proxmox nodes, it'll round robin. (pve1, pve2, pve1, pve2, ...)"
+  type        = number
+}
+
 variable "proxmox-nodes" {
-  description = "Nodes on Proxmox to deploy the Kubernetes cluster to"
+  description = "Physical nodes in the Proxmox cluster to deploy the Kubernetes cluster to"
   type        = list(string)
 }
 
 variable "main-machine-name" {
-  description = "Name of the main machine"
+  description = "Name of the main machine, only needed if running it on one machine."
   type        = string
 }
 
 variable "is-main-only" {
-  description = "Put the VM on the main node"
+  description = "If using only one machine, set this to true. It'll put all of the VMs on that machine."
   type        = bool
 }
 
