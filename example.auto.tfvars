@@ -1,6 +1,6 @@
 # @@@@@@ IMPORTANT!! @@@@@@ #
 # Never upload your .tfvars file to your Git repo, especially if they have sensitive information such as the API Token Secret! 
-# You can use a .tfvars.example file to show the structure of the .tfvars file, and then use a .gitignore file to ignore the .tfvars file.
+# You can use an example.auto.tfvars file to show the structure of the .tfvars file, and then use a .gitignore file to ignore the .tfvars file.
 # This is to prevent sensitive information from being uploaded to your Git repo.
 # The provided values are examples, you may change them as you like or need. I tried to make it as understandable and realistic as possible.
 # This script is based off of the Terraform video in Jim's Garage, please use it as reference, even though the script is quite different.
